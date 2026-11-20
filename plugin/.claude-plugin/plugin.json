@@ -1,0 +1,14 @@
+{
+  "name": "domainwaechter",
+  "displayName": "Domainwächter",
+  "version": "1.0.0",
+  "description": "Passive security check of a website you operate (HTTPS, headers, DNS and mail authentication, exposed files, privacy-related technical points) with a step-by-step repair guide.",
+  "author": {"name": "Martin Schenk S.L.", "email": "martin@domainwaechter.de"},
+  "homepage": "https://www.domainwaechter.de",
+  "repository": "https://github.com/martinschenk/domainwaechter-mcp",
+  "privacyPolicyUrl": "https://www.domainwaechter.de/datenschutz.html",
+  "termsOfServiceUrl": "https://www.domainwaechter.de/agb.html",
+  "documentationUrl": "https://github.com/martinschenk/domainwaechter-mcp",
+  "supportUrl": "https://www.domainwaechter.de/impressum.html",
+  "license": "MIT"
+}

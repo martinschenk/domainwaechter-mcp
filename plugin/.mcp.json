@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "domainwaechter": {
+      "type": "http",
+      "url": "https://www.domainwaechter.de/api/v1/mcp"
+    }
+  }
+}

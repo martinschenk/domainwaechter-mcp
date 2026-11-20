@@ -1,0 +1,25 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.martinschenk/domainwaechter",
+  "title": "Domainwaechter Website Security Check",
+  "description": "Passive security check of a website you operate: HTTPS, headers, DNS and mail authentication, exposed files, privacy-related technical points. Returns a score, findings and a step-by-step repair guide.",
+  "version": "1.0.0",
+  "websiteUrl": "https://www.domainwaechter.de",
+  "repository": {
+    "url": "https://github.com/martinschenk/domainwaechter-mcp",
+    "source": "github"
+  },
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/martinschenk/domainwaechter-mcp/main/icon-512.png",
+      "mimeType": "image/png",
+      "sizes": ["512x512"]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://www.domainwaechter.de/api/v1/mcp"
+    }
+  ]
+}
