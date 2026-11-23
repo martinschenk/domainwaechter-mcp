@@ -1,11 +1,15 @@
 {
   "name": "domainwaechter",
-  "owner": {"name": "Martin Schenk S.L.", "email": "martin@domainwaechter.de"},
+  "owner": {
+    "name": "Martin Schenk S.L.",
+    "email": "martin@domainwaechter.de"
+  },
   "plugins": [
     {
       "name": "domainwaechter",
       "source": "./plugin",
       "description": "Passive security check of your own website with a repair guide."
     }
-  ]
+  ],
+  "description": "Passive security check of your own website with a step-by-step repair guide."
 }
