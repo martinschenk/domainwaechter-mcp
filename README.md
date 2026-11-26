@@ -10,7 +10,7 @@ Remote MCP server for [Domainwächter](https://www.domainwaechter.de) (German) a
 
 | Tool | What it does | Read-only |
 |---|---|---|
-| `analyze_website` | Starts a check of a domain whose operator has verified it (verification file on the server). Returns a `job_id`. | no |
+| `analyze_website` | Starts a check of a domain whose operator has verified it (verification file on the server or a DNS TXT record). If the domain is not verified yet, it returns both ways with ready-to-use content. Returns a `job_id`. | no |
 | `get_analysis` | Status and result: score, findings by severity, report and PDF links, repair guide in Markdown. | yes |
 | `list_analyses` | The latest 20 analyses of the account. | yes |
 | `get_quota` | Free analyses left this month and where to add credit. | yes |
@@ -25,6 +25,15 @@ The server only looks at publicly reachable information, from outside. It never 
 - **Claude Code plugin:** `/plugin marketplace add martinschenk/domainwaechter-mcp`, then `/plugin install domainwaechter@domainwaechter`
 
 See [llms-install.md](llms-install.md) for step-by-step setup.
+
+## Verifying a domain
+
+A check runs only after the operator proves control of the domain and confirms authorization. Two equivalent ways:
+
+- **File:** a small text file with the account's personal code at `/.well-known/domainwaechter-verify.txt` on the web server (Spanish market: `itvweb-verify.txt`).
+- **DNS:** a TXT record `domainwaechter-verify=<code>` on the domain (Spanish market: `itvweb-verify=<code>`), for sites without file access (site builders, shops).
+
+`analyze_website` returns the exact file path and content and the exact TXT host and value. The person confirms authorization in the browser; the assistant never confirms for them. The assistant may create the file itself only with the user's explicit consent and with access the user granted on purpose. The proof is checked again before every test; remove the file or the record and no further test runs.
 
 ## Limits
 
